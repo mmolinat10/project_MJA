@@ -5,10 +5,13 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float speed;
+    public string typeBall;
+    public GameObject ball, ball2;
 
     // Use this for initialization
     void Start()
     {
+         Physics.IgnoreCollision(ball.GetComponent<Collider>(), ball2.GetComponent<Collider>());
         // Initial Velocity
         GetComponent<Rigidbody>().velocity = Vector3.left * speed;
     }
@@ -166,6 +169,32 @@ public class Ball : MonoBehaviour
 
             // Set Velocity with dir * speed
             GetComponent<Rigidbody>().velocity = dir * speed;
+        }
+
+        if (col.gameObject.tag == "normalBricks")
+        {
+            // Calculate hit Factor
+            float y = HitFactor(transform.position,
+                                col.transform.position,
+                                col.collider.bounds.size.y);
+
+            Destroy(col.gameObject);
+            // Calculate direction, make length=1 via .normalized
+            //Vector3 dir = new Vector3(1, -GetComponent<Rigidbody>().velocity.y, 0).normalized;
+
+            Vector3 dir = GetComponent<Rigidbody>().velocity;
+            if (GetComponent<Rigidbody>().velocity.x < 0f)
+            {
+                dir = new Vector3(1, 1, 0).normalized;
+            }
+            else if (GetComponent<Rigidbody>().velocity.x > 0)
+            {
+                dir = new Vector3(-1, 1, 0).normalized;
+            }
+
+            // Set Velocity with dir * speed
+            GetComponent<Rigidbody>().velocity = dir * speed;
+            
         }
     }
 }
