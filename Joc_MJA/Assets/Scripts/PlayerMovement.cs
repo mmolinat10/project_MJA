@@ -9,19 +9,26 @@ public class PlayerMovement : MonoBehaviour {
     public float speed;
     private Rigidbody RB;
     public  float heightPala;
+    public GameObject ball, ball2;
+    public GameObject mainCam;
+    private Game mainCamGameS;
 
     // Use this for initialization
     void Start() {
         RB = this.GetComponent<Rigidbody>();
+        mainCamGameS = mainCam.GetComponent<Game>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (player1) { movementPlayer1(); }
-        if (!player1) { movementPlayer2(); }
-        checkPositions();
+        if (!mainCamGameS.endGame || !mainCamGameS.initGame)
+        { 
+            if (player1) { movementPlayer1(); }
+            if (!player1) { movementPlayer2(); }
+            checkPositions();
+        }
+       
 
     }
 
