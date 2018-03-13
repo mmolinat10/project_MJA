@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!mainCamGameS.endGame || !mainCamGameS.initGame)
+        if (!mainCamGameS.endGame)
         { 
             if (player1) { movementPlayer1(); }
             if (!player1) { movementPlayer2(); }
