@@ -15,10 +15,10 @@ public class Ball2 : MonoBehaviour {
     private bool reset;
     private bool firstShoot;
 
-
     // Use this for initialization
     void Start()
     {
+        
         firstShoot = false;
         mainCamGameS = mainCam.GetComponent<Game>();
         
@@ -170,33 +170,44 @@ public class Ball2 : MonoBehaviour {
         if (col.gameObject.name == "paretL")
         {
             
-            mainCamGameS.pointsPj2 = mainCamGameS.pointsPj2 + 1;
+            mainCamGameS.pointsPj2 += 2;
+
             mainCamGameS.puntuacionPj2.GetComponent<Text>().text = mainCamGameS.pointsPj2.ToString();
 
             gameObject.SetActive(false);
             transform.parent = pala2.transform;
-
-            gameObject.GetComponent<Transform>().position = new Vector3(posBallX, pala2.transform.position.y, pala2.transform.position.z);
-
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            gameObject.GetComponent<Transform>().position = new Vector3(posBallX, pala2.transform.position.y, pala2.transform.position.z);
             reset = true;
+           
             gameObject.SetActive(true);
             
+
         }
 
         if (col.gameObject.name == "paretR")
         {
+          
+            mainCamGameS.pointsPj1 += 1;
+      
 
-            mainCamGameS.pointsPj1 = mainCamGameS.pointsPj1 + 1;
             mainCamGameS.puntuacionPj1.GetComponent<Text>().text = mainCamGameS.pointsPj1.ToString();
             gameObject.SetActive(false);
             transform.parent = pala2.transform;
-
-            gameObject.GetComponent<Transform>().position = new Vector3(posBallX, pala2.transform.position.y, pala2.transform.position.z);
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            gameObject.GetComponent<Transform>().position = new Vector3(posBallX, pala2.transform.position.y, pala2.transform.position.z);
             reset = true;
+            
             gameObject.SetActive(true);
-          
+            
+
         }
     }
+
+    /*public void resetPos()
+    {
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        gameObject.GetComponent<Transform>().position = new Vector3(posBallX, pala2.transform.position.y, pala2.transform.position.z);
+        ball.GetComponent<Ball>().resetPos();
+    }*/
 }

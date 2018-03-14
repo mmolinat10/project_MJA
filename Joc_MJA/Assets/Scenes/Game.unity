@@ -1756,6 +1756,11 @@ Prefab:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1644894003}
+    - target: {fileID: 23157142563088010, guid: 7f3a44b2843632141b10d389df935298,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a000a7f4295a8c4cb4baeb45eba6088, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f3a44b2843632141b10d389df935298, type: 2}
   m_IsPrefabParent: 0
@@ -2558,6 +2563,11 @@ Prefab:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1644894003}
+    - target: {fileID: 23157142563088010, guid: 7f3a44b2843632141b10d389df935298,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cebe27e91a24e1c429c1df4194a01554, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f3a44b2843632141b10d389df935298, type: 2}
   m_IsPrefabParent: 0
@@ -2760,7 +2770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endGame: 0
-  initGame: 0
   pointsPj1: 0
   pointsPj2: 0
   notificationPj1: {fileID: 10575806}
@@ -2816,7 +2825,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7a000a7f4295a8c4cb4baeb45eba6088, type: 2}
+      objectReference: {fileID: 2100000, guid: cebe27e91a24e1c429c1df4194a01554, type: 2}
     - target: {fileID: 1132563081652202, guid: 121bae9afbc2b354287a66c74d23b481, type: 2}
       propertyPath: m_IsActive
       value: 1

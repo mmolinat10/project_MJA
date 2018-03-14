@@ -21,6 +21,21 @@ public class Game : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space) && endGame)
         {
+            SceneManager.LoadScene(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
             SceneManager.LoadScene(0);
         }
 
