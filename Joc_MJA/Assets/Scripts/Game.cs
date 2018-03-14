@@ -21,7 +21,15 @@ public class Game : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space) && endGame)
         {
-            SceneManager.LoadScene(1);
+            if (SceneManager.GetActiveScene().name == "Game")
+            {
+                SceneManager.LoadScene(1);
+            }
+            else if (SceneManager.GetActiveScene().name == "game2")
+            {
+                SceneManager.LoadScene(2);
+            }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -32,6 +40,11 @@ public class Game : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene(2);
         }
 
         if (Input.GetKeyDown(KeyCode.I))
